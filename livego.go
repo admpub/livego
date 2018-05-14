@@ -66,7 +66,7 @@ func startHls() (*hls.Server, net.Listener) {
 	go func() {
 		defer func() {
 			if r := recover(); r != nil {
-				log.Errorf("HLS server panic: ", r)
+				log.Error("HLS server panic: ", r)
 			}
 		}()
 		log.Info("HLS listen On", hlsaddr)
