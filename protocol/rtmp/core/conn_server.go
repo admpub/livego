@@ -338,6 +338,10 @@ func (connServer *ConnServer) Write(c ChunkStream) error {
 	return connServer.conn.Write(&c)
 }
 
+func (connServer *ConnServer) Flush() error {
+	return connServer.conn.Flush()
+}
+
 func (connServer *ConnServer) Read(c *ChunkStream) (err error) {
 	return connServer.conn.Read(c)
 }
